@@ -2,6 +2,10 @@ defmodule VendingMachine.ItemService do
   alias VendingMachine.{Item, Stock}
   def load_vending_machine, do: Stock.create_stock()
 
+  def load_vending_machine_money, do: Stock.create_money()
+
+  def load_vending_machine_item, do: Stock.create_item()
+
   def verify_key(item, key) do
     if not Map.has_key?(item, key) do
       "x"

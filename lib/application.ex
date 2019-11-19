@@ -2,11 +2,13 @@ defmodule VendingMachine.Application do
   @moduledoc false
   use Application
 
+  alias VendingMachine.{ItemService, Stash, VendingServer}
+
   def start(_type, _args) do
 
     children = [
-      {VendingMachine.Stash, VendingMachine.ItemOperation.operate()},
-      {VendingMachine.Server, []}
+      {Stash, ItemService.load_vending_machine()},
+      {VendingServer, []}
     ]
 
     sup_opts = [strategy: :rest_for_one, name: VendingMachine.Supervisor]

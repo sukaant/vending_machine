@@ -10,15 +10,38 @@ defmodule VendingMachine.Server do
 
   @impl true
   def init(_state) do
+    Process.flag(:trap_exit, true)
     initial_vending_machine = VendingMachine.Stash.get()
     IO.inspect(initial_vending_machine, label: "initial_vm >>>>>>>>>>>>>>>>>>>>>>")
     {:ok, initial_vending_machine}
   end
 
+
   @impl true
   def handle_cast(:display, state) do
     IO.inspect("Gets to VendingMachine.Server.handle_cast!!!!!!!!!!!!!!!!!!!")
     {:noreply, ItemOperation.load_vending_machine(state)}
+  end
+
+  def handle_call(:display_item, _from, vm) do
+    IO.inspect("Gets to VendingMachine.Server.handle_cast_item!!!!!!!!!!!!!!!!!!!")
+    {display, new_vm} = VendingMachine.get_display()
+    {:reply, display, new_vm}
+  end
+
+  def handle_call(:display_money, _from,  state) do
+    IO.inspect("Gets to VendingMachine.Server.handle_cast_money!!!!!!!!!!!!!!!!!!!")
+    {:reply, ItemOperation.load_vending_machine_money(state)}
+  end
+
+  def handle_call({:select_product, product_name}, _from, state) do
+    {product, new_state} = ItemOperation.foo(product_name) # new_state = %{state | item: tl(vm.item)} product = hd(vm.item)
+    {:reply, product, new_state}
+  end
+
+  @impl true
+  def handle_info(_msg, state) do
+    {:stop, :normal, state}
   end
 
   @impl true

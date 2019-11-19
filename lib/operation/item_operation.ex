@@ -11,6 +11,29 @@ defmodule VendingMachine.ItemOperation do
     # |> load_vending_machine
   end
 
+  def operate_money() do
+    ItemService.load_vending_machine_money()
+    # |> load_vending_machine
+  end
+
+  def operate_item() do
+    ItemService.load_vending_machine_item()
+    # |> load_vending_machine
+  end
+
+  def load_vending_machine_item(stock) do
+    # {:hello, stock}
+    stock
+    |> IO.inspect(label: "This is Stock Item")
+  end
+
+  def load_vending_machine_money(stock) do
+    # {:hello, stock}
+    stock
+    |> IO.inspect(label: "This is Stock Money")
+  end
+
+
   def load_vending_machine(stock) do
     # {:hello, stock}
     ItemDisplay.display_item_available_header()
