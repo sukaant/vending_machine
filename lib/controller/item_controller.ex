@@ -6,26 +6,26 @@ defmodule VendingMachine.ItemController do
     PaymentOperation
   }
 
-  # def operate() do
-  #   ItemService.load_vending_machine()
-  #   # |> load_vending_machine
-  # end
+  def operate() do
+    ItemService.load_vending_machine()
+    # |> load_vending_machine
+  end
 
-  # def load_vending_machine(stock) do
-  #   ItemDisplay.display_item_available_header()
-  #   display_item(stock)
-  # end
+  def load_vending_machine(stock) do
+    ItemDisplay.display_item_available_header()
+    display_item(stock)
+  end
 
-  # def display_item(stock) do
-  #   ItemDisplay.display_item_available_header()
-  #   Enum.each(stock[:item], fn {k, v} -> ItemDisplay.display_item(k, v) end)
-  #   # get_key_from_user(stock)
-  # end
+  def display_item(stock) do
+    ItemDisplay.display_item_available_header()
+    Enum.each(stock[:item], fn {k, v} -> ItemDisplay.display_item(k, v) end)
+    # get_key_from_user(stock)
+  end
 
-  # def get_key_from_user(stock) do
-  #   ItemDisplay.get_item_key()
-  #   |> verify_key(stock)
-  # end
+  def get_key_from_user(stock) do
+    ItemDisplay.get_item_key()
+    |> verify_key(stock)
+  end
 
   def verify_key(key, stock) do
     status = ItemService.verify_key(stock[:item], key)
