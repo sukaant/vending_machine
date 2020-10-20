@@ -12,7 +12,16 @@ defmodule VendingMachine.QueryHelper do
     |> execute_query()
   end
 
-  def execute_query(query) do
+  def match_node_query(query_params) do
+    """
+    MATCH (n:#{Keyword.fetch!(query_params, :node_name)})
+    #{where(Keyword.get(query_params, :where))}
+    RETURN n
+    """
+    |> execute_query()
+  end
+
+  defp execute_query(query) do
     connection()
     |> Sips.query!(query)
   end
@@ -31,6 +40,13 @@ defmodule VendingMachine.QueryHelper do
   defp on_match(match_value) do
     case !is_nil(match_value) do
       true -> "ON MATCH SET #{match_value |> Enum.map(fn {k, v} -> "n.#{k} = #{v}" end) |> Enum.join(", ")}"
+      _ -> ""
+    end
+  end
+
+  defp where(where_value) do
+    case !is_nil(where_value) do
+      true -> "WHERE #{where_value |> Enum.map(fn {k, v} -> "n.#{k} = #{v}" end) |> Enum.join(", ")}"
       _ -> ""
     end
   end
