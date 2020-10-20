@@ -9,10 +9,9 @@ defmodule VendingMachine.ItemData do
         key: #{Keyword.fetch!(item, :key)},
         display: #{Keyword.fetch!(item, :display)},
         name: #{Keyword.fetch!(item, :name)},
-        department: #{Keyword.fetch!(item, :department)},
-        quantity: #{Keyword.fetch!(item, :quantity)},
-        price: #{Keyword.fetch!(item, :price)}
-        })
+        department: #{Keyword.fetch!(item, :department)}
+        }),
+      on_create: [quantity: Keyword.fetch!(item, :quantity), price: Keyword.fetch!(item, :price)]
     ]
     |> QueryHelper.merge_node_query()
   end
