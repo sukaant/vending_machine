@@ -16,4 +16,18 @@ defmodule VendingMachine.ItemData do
     ]
     |> QueryHelper.merge_node_query()
   end
+
+  def update_item() do
+    [
+      node_name: "Item",
+      param: ~s({
+        key: #{Keyword.fetch!(item, :key)},
+        display: #{Keyword.fetch!(item, :display)},
+        name: #{Keyword.fetch!(item, :name)},
+        department: #{Keyword.fetch!(item, :department)}
+        }),
+      on_match: [quantity: Keyword.fetch!(item, :quantity), price: Keyword.fetch!(item, :price)]
+    ]
+    |> QueryHelper.merge_node_query()
+  end
 end
