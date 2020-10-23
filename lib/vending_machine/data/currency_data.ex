@@ -6,11 +6,11 @@ defmodule VendingMachine.CurrencyData do
     [
       node_name: "CurrencyNote",
       param: ~s({
-        backgroundColor: #{Keyword.fetch!(currency_note, :background_color)},
-        fluorescentStripColor: #{Keyword.fetch!(currency_note, :fluorescent_strip_color)},
-        obverse: #{Keyword.fetch!(currency_note, :obverse)},
-        reverse: #{Keyword.fetch!(currency_note, :reverse)},
-        value: #{Keyword.fetch!(currency_note, :value)}
+        backgroundColor: "#{Keyword.fetch!(currency_note, :background_color)}",
+        fluorescentStripColor: "#{Keyword.fetch!(currency_note, :fluorescent_strip_color)}",
+        obverse: "#{Keyword.fetch!(currency_note, :obverse)}",
+        reverse: "#{Keyword.fetch!(currency_note, :reverse)}",
+        value: "#{Keyword.fetch!(currency_note, :value)}"
         }),
       on_create: [quantity: Keyword.fetch!(currency_note, :quantity)]
     ]
