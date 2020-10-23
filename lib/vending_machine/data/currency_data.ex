@@ -10,7 +10,7 @@ defmodule VendingMachine.CurrencyData do
         fluorescentStripColor: "#{Keyword.fetch!(currency_note, :fluorescent_strip_color)}",
         obverse: "#{Keyword.fetch!(currency_note, :obverse)}",
         reverse: "#{Keyword.fetch!(currency_note, :reverse)}",
-        value: "#{Keyword.fetch!(currency_note, :value)}"
+        value: #{Keyword.fetch!(currency_note, :value)}
         }),
       on_create: [quantity: Keyword.fetch!(currency_note, :quantity)]
     ]
