@@ -1,6 +1,7 @@
 defmodule VendingMachine.Server do
   use GenServer
   alias VendingMachine.{Server, ItemOperation, Stock}
+
   @doc """
   Starts the Vending Machine GenServer
   """
@@ -16,7 +17,6 @@ defmodule VendingMachine.Server do
     {:ok, initial_vending_machine}
   end
 
-
   @impl true
   def handle_cast(:display, state) do
     IO.inspect("Gets to VendingMachine.Server.handle_cast!!!!!!!!!!!!!!!!!!!")
@@ -29,13 +29,14 @@ defmodule VendingMachine.Server do
     {:reply, display, new_vm}
   end
 
-  def handle_call(:display_money, _from,  state) do
+  def handle_call(:display_money, _from, state) do
     IO.inspect("Gets to VendingMachine.Server.handle_cast_money!!!!!!!!!!!!!!!!!!!")
     {:reply, ItemOperation.load_vending_machine_money(state)}
   end
 
   def handle_call({:select_product, product_name}, _from, state) do
-    {product, new_state} = ItemOperation.foo(product_name) # new_state = %{state | item: tl(vm.item)} product = hd(vm.item)
+    # new_state = %{state | item: tl(vm.item)} product = hd(vm.item)
+    {product, new_state} = ItemOperation.foo(product_name)
     {:reply, product, new_state}
   end
 

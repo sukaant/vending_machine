@@ -33,7 +33,6 @@ defmodule VendingMachine.ItemOperation do
     |> IO.inspect(label: "This is Stock Money")
   end
 
-
   def load_vending_machine(stock) do
     # {:hello, stock}
     ItemDisplay.display_item_available_header()

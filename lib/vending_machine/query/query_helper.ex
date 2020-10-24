@@ -1,5 +1,4 @@
 defmodule VendingMachine.QueryHelper do
-
   alias Bolt.Sips
 
   def merge_node_query(query_params) do

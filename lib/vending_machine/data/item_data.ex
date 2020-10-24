@@ -1,5 +1,4 @@
 defmodule VendingMachine.ItemData do
-
   alias VendingMachine.QueryHelper
 
   def add_item(item) do

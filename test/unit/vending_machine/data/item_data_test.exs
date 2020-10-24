@@ -13,13 +13,14 @@ defmodule VendingMachine.ItemDataTest do
     ]
 
     expected_labels = ["Item"]
+
     expected_properties = %{
       "department" => "Soft Drink",
       "display" => "🍹",
       "key" => "A1",
       "name" => "Coke",
       "price" => 1.32,
-      "quantity" => 100,
+      "quantity" => 100
     }
 
     actual_value =
@@ -42,13 +43,14 @@ defmodule VendingMachine.ItemDataTest do
     ]
 
     expected_labels = ["Item"]
+
     expected_properties = %{
       "department" => "Soft Drink",
       "display" => "🍹",
       "key" => "A1",
       "name" => "Coke",
       "price" => 1.32,
-      "quantity" => 100,
+      "quantity" => 100
     }
 
     actual_value =
@@ -69,13 +71,14 @@ defmodule VendingMachine.ItemDataTest do
     ]
 
     expected_labels = ["Item"]
+
     expected_properties = %{
       "department" => "Soft Drink",
       "display" => "🍹",
       "key" => "A1",
       "name" => "Coke",
       "price" => 1.32,
-      "quantity" => 100,
+      "quantity" => 100
     }
 
     actual_value =

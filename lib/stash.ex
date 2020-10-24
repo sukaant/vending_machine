@@ -24,5 +24,4 @@ defmodule VendingMachine.Stash do
   def handle_cast({:update, new_vending_machine}, _current_vending_machine) do
     {:noreply, new_vending_machine}
   end
-
 end

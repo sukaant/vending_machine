@@ -40,8 +40,6 @@
 #     {:noreply, ItemController.load_vending_machine(state)}
 #   end
 
-
-
 #   @impl true
 #   def handle_info(_msg, state) do
 #     {:stop, :normal, state}
