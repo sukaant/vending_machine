@@ -1,5 +1,4 @@
 defmodule VendingMachine.CurrencyData do
-
   alias VendingMachine.QueryHelper
 
   def add_currency_note(currency_note) do

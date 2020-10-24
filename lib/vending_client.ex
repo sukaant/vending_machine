@@ -1,5 +1,4 @@
 defmodule VendingMachine.VendingClient do
-
   def get_display(server) do
     GenServer.cast(server, :display_item)
   end

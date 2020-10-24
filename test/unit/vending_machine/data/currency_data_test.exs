@@ -13,6 +13,7 @@ defmodule VendingMachine.CurrencyDataTest do
     ]
 
     expected_labels = ["CurrencyNote"]
+
     expected_properties = %{
       "backgroundColor" => "Teal",
       "fluorescentStripColor" => "Pink",
@@ -42,6 +43,7 @@ defmodule VendingMachine.CurrencyDataTest do
     ]
 
     expected_labels = ["CurrencyNote"]
+
     expected_properties = %{
       "backgroundColor" => "Teal",
       "fluorescentStripColor" => "Pink",
@@ -70,6 +72,7 @@ defmodule VendingMachine.CurrencyDataTest do
     ]
 
     expected_labels = ["CurrencyNote"]
+
     expected_properties = %{
       "backgroundColor" => "Teal",
       "fluorescentStripColor" => "Pink",
@@ -98,6 +101,7 @@ defmodule VendingMachine.CurrencyDataTest do
     ]
 
     expected_labels = ["CurrencyCoin"]
+
     expected_properties = %{
       "diameter" => 1.043,
       "thickness" => 2.00,
@@ -125,6 +129,7 @@ defmodule VendingMachine.CurrencyDataTest do
     ]
 
     expected_labels = ["CurrencyCoin"]
+
     expected_properties = %{
       "diameter" => 1.043,
       "thickness" => 2.00,
@@ -151,6 +156,7 @@ defmodule VendingMachine.CurrencyDataTest do
     ]
 
     expected_labels = ["CurrencyCoin"]
+
     expected_properties = %{
       "diameter" => 1.043,
       "thickness" => 2.00,

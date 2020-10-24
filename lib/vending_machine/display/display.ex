@@ -51,10 +51,7 @@ defmodule VendingMachine.Display do
     do: IO.inspect(DisplayValues.current_date() <> to_string(Date.utc_today()))
 
   def print_current_time,
-    do:
-      IO.inspect(
-        DisplayValues.current_time() <> to_string(Time.truncate(Time.utc_now(), :second))
-      )
+    do: IO.inspect(DisplayValues.current_time() <> to_string(Time.truncate(Time.utc_now(), :second)))
 
   def print_payment_amount(payment_amount),
     do: IO.inspect(DisplayValues.payment_amount() <> payment_amount)

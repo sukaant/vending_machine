@@ -33,8 +33,7 @@ defmodule VendingMachine.PaymentServiceTest do
     given_amount_required = 22.00
     expected_value = "add_cash"
 
-    actual_value =
-      PaymentService.calculate_balance_status(given_amount_added, given_amount_required)
+    actual_value = PaymentService.calculate_balance_status(given_amount_added, given_amount_required)
 
     assert expected_value == actual_value
   end
@@ -44,8 +43,7 @@ defmodule VendingMachine.PaymentServiceTest do
     given_amount_required = 20.00
     expected_value = "return_cash"
 
-    actual_value =
-      PaymentService.calculate_balance_status(given_amount_added, given_amount_required)
+    actual_value = PaymentService.calculate_balance_status(given_amount_added, given_amount_required)
 
     assert expected_value == actual_value
   end
@@ -55,8 +53,7 @@ defmodule VendingMachine.PaymentServiceTest do
     given_amount_required = 20.00
     expected_value = "deliver_item"
 
-    actual_value =
-      PaymentService.calculate_balance_status(given_amount_added, given_amount_required)
+    actual_value = PaymentService.calculate_balance_status(given_amount_added, given_amount_required)
 
     assert expected_value == actual_value
   end
@@ -67,8 +64,7 @@ defmodule VendingMachine.PaymentServiceTest do
     expected_value = 0.95
     expected_value = 0.95
 
-    actual_value =
-      PaymentService.calculate_difference_amount(given_first_amount, given_second_amount)
+    actual_value = PaymentService.calculate_difference_amount(given_first_amount, given_second_amount)
 
     assert expected_value == actual_value
   end

@@ -17,11 +17,9 @@ defmodule VendingMachine.PaymentService do
   def arrange_refund_amount(balance_amount) do
     currency_detail = Currency.get_currency_notes_and_coins(balance_amount)
 
-    currency_notes =
-      Currency.get_detail_currency_count(CurrencyNote.get_note_list(), currency_detail[:notes])
+    currency_notes = Currency.get_detail_currency_count(CurrencyNote.get_note_list(), currency_detail[:notes])
 
-    currency_coins =
-      Currency.get_detail_currency_count(CurrencyCoin.get_coin_list(), currency_detail[:coins])
+    currency_coins = Currency.get_detail_currency_count(CurrencyCoin.get_coin_list(), currency_detail[:coins])
 
     %Currency{notes: currency_notes, coins: currency_coins}
   end
