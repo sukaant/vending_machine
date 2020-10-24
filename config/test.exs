@@ -6,5 +6,3 @@ config :bolt_sips, Bolt,
   port: 7687,
   pool_size: 5,
   max_overflow: 1
-
-z
